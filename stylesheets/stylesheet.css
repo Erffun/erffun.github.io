@@ -25,7 +25,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font: inherit;
+  /*font: inherit;*/
   vertical-align: baseline;
 }
 
@@ -420,4 +420,12 @@ Small Device Styles
     font-size: 11px;
   }
 
+}
+.options {
+    background:#fff;
+    padding:10px 10px 10px 25px;
+}
+
+.tree {
+    width:55%;
 }
