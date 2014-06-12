@@ -429,3 +429,9 @@ Small Device Styles
 .tree {
     width:55%;
 }
+
+.mainContainer {
+    background: none repeat scroll 0 0 #fbfbfb;
+    margin: 0 auto;
+    width: 70%;
+}

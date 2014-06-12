@@ -22,32 +22,33 @@
         </header>
     </div>
     <div id="main_content_wrap" class="outer">
-        <section id="main_content" class="inner">
-            <h3>
-                Erff Json Tree with lazy support <i><small>(ver. 1)</small></i>
-            </h3>
-            <p>
-                Erff jsonTree is a small jquery plugin (minified version is only 3.13kb) for create a treeview from json data and support lazy loading.
-            </p>
+        <div class="mainContainer">
+            <section id="main_content" class="inner">
+                <h3>
+                    Erff Json Tree with lazy support <i><small>(ver. 1)</small></i>
+                </h3>
+                <p>
+                    Erff jsonTree is a small jquery plugin (minified version is only 3.13kb) for create a treeview from json data and support lazy loading.
+                </p>
 
-            <div>
-                <div id="simpleTree">
-                    <h3>Simple Tree</h3>
+                <div>
+                    <div id="simpleTree">
+                        <h3>Simple Tree</h3>
 <pre><code>Code:
 $('#simpleTreeContainer').jsonTree(jsonData, {
     mandatorySelect: true,
     selectedIdElementName: 'simpleTreeContainer',
     selectedItemId: 'simpleTreeContainer'
 });</code></pre>
-                    <br />
-                    <div id="simpleTreeContainer"></div>
-                    <button id="simpleTreeBtn">Get value</button>
-                </div>
+                        <br />
+                        <div id="simpleTreeContainer"></div>
+                        <button id="simpleTreeBtn">Get value</button>
+                    </div>
 
-                <hr />
+                    <hr />
 
-                <div id="checkboxTree">
-                    <h3>Simple Tree with checkbox</h3>
+                    <div id="checkboxTree">
+                        <h3>Simple Tree with checkbox</h3>
 <pre><code>Code:
 $('#checkboxTreeContainer').jsonTree(jsonData, {
     selectedIdElementName: 'checkboxTreeContainer',
@@ -59,13 +60,13 @@ $('#checkboxTreeContainer').jsonTree(jsonData, {
     selectedItemIsChecked: true
 });
 </code></pre>
-                    <br />
-                    <div id="checkboxTreeContainer"></div>
-                    <button id="checkboxTreeBtn">Get value</button>
-                </div>
-                <hr />
-                <div id="lazyTree">
-                    <h3>Lazy loading Tree</h3>
+                        <br />
+                        <div id="checkboxTreeContainer"></div>
+                        <button id="checkboxTreeBtn">Get value</button>
+                    </div>
+                    <hr />
+                    <div id="lazyTree">
+                        <h3>Lazy loading Tree</h3>
 <pre><code>Code:
 $('#lazyTreeContainer').jsonTree(lazyData, {
     mandatorySelect: true,
@@ -76,173 +77,172 @@ $('#lazyTreeContainer').jsonTree(lazyData, {
     lazySendParameterName: 'id',
 });
 </code></pre>
-                    <br />
-                    <div id="lazyTreeContainer"></div>
-                    <button id="lazyTreeBtn">Get value</button>
+                        <br />
+                        <div id="lazyTreeContainer"></div>
+                        <button id="lazyTreeBtn">Get value</button>
+                    </div>
+                    <hr />
                 </div>
-                <hr />
-            </div>
 
-            <div class="pageContainer">
-                <h4>
-                    JsonTree options:
-                </h4>
-                <section class="options">
+                <div class="pageContainer">
+                    <h4>
+                        JsonTree options:
+                    </h4>
+                    <section class="options">
 
-                    <article>
-                        <h5><b>showCheckBox</b> <small> : boolean</small></h5>
-                        <p>
-                            When using showCheckbox, checkboxes will appear in side of each tree item.
-                        </p>
-                        default value is : <b>false</b>
-                    </article>
-                    <hr />
-                    <article>
-                        <h5><b>checkBoxText</b><small> : string</small></h5>
-                        <p>
-                            The text of checkboxes,
-                            This item can be used when "showCheckBox" is true.
-                        </p>
-                        default value is : <b>Apply Sub Items</b>
-                    </article>
-                    <hr />
-                    <article>
-                        <h5><b>checkBoxElementName</b> <small> : string</small></h5>
-                        <p>
-                            The 'name' attribute of selected item's checkbox for send check result to form action.
-                        </p>
-                        default value is : <b>chkApplySub</b>
-                    </article>
-                    <hr />
-                    <article>
-                        <h5><b>checkBoxElementId</b> <small> : string</small></h5>
-                        <p>
-                            The 'id' attribute of selected item's checkbox.
-                        </p>
-                        default value is : <b>chkApplySub</b>
-                    </article>
-                    <hr />
-                    <article>
-                        <h5><b>selectedIdElementName </b> <small> : string</small></h5>
-                        <p>
-                            The 'name' attribute of selected item. Use for send selected value to form action.
-                        </p>
-                        default value is : <b>hdnSelected</b>
-                    </article>
-                    <hr />
-                    <article>
-                        <h5><b>selectedItemId</b> <small> : string</small></h5>
-                        <p>
-                            The 'id' attribute of selected item.
-                        </p>
-                        default value is : <b>0</b>
-                    </article>
-                    <hr />
-                    <article>
-                        <h5><b>selectedItemIsChecked </b> <small> : boolean</small></h5>
-                        <p>
-                            When this property was true, selected item's checkbox will checked.
-                        </p>
-                        default value is : <b>false</b>
-                    </article>
-                    <hr />
-                    <article>
-                        <h5><b>mandatorySelect</b> <small> : boolean</small></h5>
-                        <p>
-                            When Using mandatory, user force to select an item. first item will selected,by default.
-                        </p>
-                        default value is : <b>false</b>
-                    </article>
-                    <hr />
-                    <article>
-                        <h5><b>lazyLoad</b> <small> : boolean</small></h5>
-                        <p>
-                            with this option, you can load sub items ondemand (when click on expand icon)
-                        </p>
-                        default value is : <b>false</b>
-                    </article>
-                    <hr />
-                    <article>
-                        <h5><b>lazyRequestUrl</b> <small> : string</small></h5>
-                        <p>
-                            The url for fetching json data.
-                        </p>
-                        default value is : <b>(empty)</b>
-                    </article>
-                    <hr />
-                    <article>
-                        <h5><b>lazySendParameterName</b> <small> : string</small></h5>
-                        <p>
-                            The name of parameter for send selected item's id with this name to lazyRequestUrl.
-                            <blockquote>
-                                for example: if lazyRequestUrl = 'http://yourdomain.com/treeItems.json' and lazySendParameterName = 'selectedId' and selected item id = 89
-                                generated request will be : http://yourdomain.com/treeItems.json?selectedId=89
-                            </blockquote>
-                        </p>
-                        default value is : <b>id</b>
-                    </article>
-                    <hr />
-                    <article>
-                        <h5><b>lazyLoadMethod</b> <small> : string</small></h5>
-                        <p>
-                            Action method of sending lazy loading request
-                        </p>
-                        default value is : <b>GET</b>
-                    </article>
-                    <hr />
-                    <article>
-                        <h5><b>onSelect</b> <small> : function</small></h5>
-                        <p>
-                            When using this option, you can pass a function for invoke after select each tree item.
-                        </p>
-                        default value is : <b>function (selectedId, selectedLi, $clickedLi) { }</b>
-                    </article>
+                        <article>
+                            <h5><b>showCheckBox</b> <small> : boolean</small></h5>
+                            <p>
+                                When using showCheckbox, checkboxes will appear in side of each tree item.
+                            </p>
+                            default value is : <b>false</b>
+                        </article>
+                        <hr />
+                        <article>
+                            <h5><b>checkBoxText</b><small> : string</small></h5>
+                            <p>
+                                The text of checkboxes,
+                                This item can be used when "showCheckBox" is true.
+                            </p>
+                            default value is : <b>Apply Sub Items</b>
+                        </article>
+                        <hr />
+                        <article>
+                            <h5><b>checkBoxElementName</b> <small> : string</small></h5>
+                            <p>
+                                The 'name' attribute of selected item's checkbox for send check result to form action.
+                            </p>
+                            default value is : <b>chkApplySub</b>
+                        </article>
+                        <hr />
+                        <article>
+                            <h5><b>checkBoxElementId</b> <small> : string</small></h5>
+                            <p>
+                                The 'id' attribute of selected item's checkbox.
+                            </p>
+                            default value is : <b>chkApplySub</b>
+                        </article>
+                        <hr />
+                        <article>
+                            <h5><b>selectedIdElementName </b> <small> : string</small></h5>
+                            <p>
+                                The 'name' attribute of selected item. Use for send selected value to form action.
+                            </p>
+                            default value is : <b>hdnSelected</b>
+                        </article>
+                        <hr />
+                        <article>
+                            <h5><b>selectedItemId</b> <small> : string</small></h5>
+                            <p>
+                                The 'id' attribute of selected item.
+                            </p>
+                            default value is : <b>0</b>
+                        </article>
+                        <hr />
+                        <article>
+                            <h5><b>selectedItemIsChecked </b> <small> : boolean</small></h5>
+                            <p>
+                                When this property was true, selected item's checkbox will checked.
+                            </p>
+                            default value is : <b>false</b>
+                        </article>
+                        <hr />
+                        <article>
+                            <h5><b>mandatorySelect</b> <small> : boolean</small></h5>
+                            <p>
+                                When Using mandatory, user force to select an item. first item will selected,by default.
+                            </p>
+                            default value is : <b>false</b>
+                        </article>
+                        <hr />
+                        <article>
+                            <h5><b>lazyLoad</b> <small> : boolean</small></h5>
+                            <p>
+                                with this option, you can load sub items ondemand (when click on expand icon)
+                            </p>
+                            default value is : <b>false</b>
+                        </article>
+                        <hr />
+                        <article>
+                            <h5><b>lazyRequestUrl</b> <small> : string</small></h5>
+                            <p>
+                                The url for fetching json data.
+                            </p>
+                            default value is : <b>(empty)</b>
+                        </article>
+                        <hr />
+                        <article>
+                            <h5><b>lazySendParameterName</b> <small> : string</small></h5>
+                            <p>
+                                The name of parameter for send selected item's id with this name to lazyRequestUrl.
+                                <blockquote>
+                                    for example: if lazyRequestUrl = 'http://yourdomain.com/treeItems.json' and lazySendParameterName = 'selectedId' and selected item id = 89
+                                    generated request will be : http://yourdomain.com/treeItems.json?selectedId=89
+                                </blockquote>
+                            </p>
+                            default value is : <b>id</b>
+                        </article>
+                        <hr />
+                        <article>
+                            <h5><b>lazyLoadMethod</b> <small> : string</small></h5>
+                            <p>
+                                Action method of sending lazy loading request
+                            </p>
+                            default value is : <b>GET</b>
+                        </article>
+                        <hr />
+                        <article>
+                            <h5><b>onSelect</b> <small> : function</small></h5>
+                            <p>
+                                When using this option, you can pass a function for invoke after select each tree item.
+                            </p>
+                            default value is : <b>function (selectedId, selectedLi, $clickedLi) { }</b>
+                        </article>
 
-                </section>
+                    </section>
 
-                <h4>
-                    JsonTree options:
-                </h4>
-                <section class="options">
-                    <p>Json model must be in following pattern:</p>
+                    <h4>
+                        JsonTree options:
+                    </h4>
+                    <section class="options">
+                        <p>Json model must be in following pattern:</p>
 
-                    <article>
-                        <h5><b>ItemId</b> <small> : string or integer</small></h5>
-                        <p>
-                            Value of item
-                        </p>
+                        <article>
+                            <h5><b>ItemId</b> <small> : string or integer</small></h5>
+                            <p>
+                                Value of item
+                            </p>
 
-                    </article>
-                    <article>
-                        <h5><b>Title</b> <small> : string</small></h5>
-                        <p>
-                            Shown as Title of item
-                        </p>
+                        </article>
+                        <article>
+                            <h5><b>Title</b> <small> : string</small></h5>
+                            <p>
+                                Shown as Title of item
+                            </p>
 
-                    </article>
-                    <article>
-                        <h5><b>Selected</b> <small> : bool</small></h5>
-                        <p>
-                            When this property was true, this item will selected after loading model. only one item can be true,
-                            if you use more than one item, the last item will selected
-                        </p>
+                        </article>
+                        <article>
+                            <h5><b>Selected</b> <small> : bool</small></h5>
+                            <p>
+                                When this property was true, this item will selected after loading model. only one item can be true,
+                                if you use more than one item, the last item will selected
+                            </p>
 
-                    </article>
-                    <article>
-                        <h5><b>HasSubItem</b> <small> : </small></h5>
-                        <p>
-                            If using lazyloading, this item can determine that this item has subItems or not
-                        </p>
+                        </article>
+                        <article>
+                            <h5><b>HasSubItem</b> <small> : </small></h5>
+                            <p>
+                                If using lazyloading, this item can determine that this item has subItems or not
+                            </p>
 
-                    </article>
-                </section>
-            </div>
-        </section>
+                        </article>
+                    </section>
+                </div>
+            </section>
+        </div>
     </div>
     <div id="footer_wrap" class="outer">
-        <footer class="inner">
-            
-        </footer>
+        <footer class="inner"></footer>
     </div>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="jsonTree.js"></script>
